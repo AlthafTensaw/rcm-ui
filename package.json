@@ -1,0 +1,58 @@
+{
+  "name": "tensaw-ui",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tensaw RCM UI platform monorepo. Internal use only.",
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter \"{packages/*}\" build",
+    "build:apps": "pnpm -r --filter \"@tensaw/app-*\" build",
+    "dev": "pnpm -r --parallel --filter \"@tensaw/app-*\" dev",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "typecheck": "tsc -b",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r --parallel test:watch",
+    "test:e2e": "pnpm -r --filter \"@tensaw/app-*\" test:e2e",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yml,yaml}\"",
+    "clean": "pnpm -r exec rm -rf dist .turbo node_modules/.cache && rm -rf node_modules",
+    "storybook": "pnpm --filter @tensaw/storybook dev",
+    "storybook:build": "pnpm --filter @tensaw/storybook build",
+    "gen:widget": "pnpm --filter @tensaw/gen-widget start",
+    "gen:page": "pnpm --filter @tensaw/gen-page start",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "echo skip-husky"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "typescript-eslint": "^8.8.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.2",
+    "tailwindcss": "^3.4.13",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

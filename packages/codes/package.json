@@ -1,0 +1,38 @@
+{
+  "name": "@tensaw/codes",
+  "version": "0.0.0",
+  "private": true,
+  "description": "RCM reference data: CPT (server adapter), HCPCS, ICD-10, POS, CARC, RARC, NUCC, US states, ZIP-to-state, payer master. Phase 4 of the v3 plan. Quarterly refresh.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./states": "./src/states/index.ts",
+    "./zip": "./src/zip/index.ts",
+    "./pos": "./src/pos/index.ts",
+    "./carc": "./src/carc/index.ts",
+    "./rarc": "./src/rarc/index.ts",
+    "./cas-group": "./src/cas-group/index.ts",
+    "./adjustment-reason": "./src/adjustment-reason/index.ts",
+    "./workflow": "./src/workflow/index.ts",
+    "./plan-type": "./src/plan-type/index.ts",
+    "./icd": "./src/icd/index.ts",
+    "./hcpcs": "./src/hcpcs/index.ts",
+    "./nucc-taxonomy": "./src/nucc-taxonomy/index.ts",
+    "./cpt": "./src/cpt/index.ts"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "build:tables": "node ./scripts/build-tables.js",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "2.1.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [],
+  "references": [
+    { "path": "./packages/runtime" },
+    { "path": "./packages/design-system" },
+    { "path": "./packages/codes" },
+    { "path": "./packages/visualization" },
+    { "path": "./packages/composition" },
+    { "path": "./packages/actions" },
+    { "path": "./packages/wired-components" },
+    { "path": "./packages/worklist" },
+    { "path": "./packages/mock-server" },
+    { "path": "./packages/archetypes" },
+    { "path": "./packages/platform-rules" },
+    { "path": "./apps/patient" },
+    { "path": "./apps/operations-console" }
+  ]
+}

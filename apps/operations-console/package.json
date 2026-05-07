@@ -1,0 +1,45 @@
+{
+  "name": "@tensaw/app-operations-console",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tensaw Operations Console — per-tenant ops dashboard for workflow runtime. Tier 1 (read-only) screens: dashboard, case list, case detail, stuck cases, activity stream. Phase B will add Tier 2 actions.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.59.0",
+    "@tensaw/actions": "workspace:*",
+    "@tensaw/composition": "workspace:*",
+    "@tensaw/design-system": "workspace:*",
+    "@tensaw/runtime": "workspace:*",
+    "@tensaw/visualization": "workspace:*",
+    "@tensaw/wired-components": "workspace:*",
+    "lucide-react": "^0.451.0",
+    "msw": "2.4.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@testing-library/react": "16.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "jsdom": "25.0.1",
+    "vite": "5.4.8",
+    "vitest": "2.1.2",
+    "tailwindcss": "^3.4.13",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20"
+  }
+}

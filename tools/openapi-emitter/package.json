@@ -1,0 +1,22 @@
+{
+  "name": "@tensaw/openapi-emitter",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CLI that emits openapi.yaml describing the actions registry. Hand-curated for AR endpoints today; will be replaced by automated zod-to-openapi walk in Phase 8.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "bin": {
+    "openapi-emitter": "./src/index.ts"
+  },
+  "scripts": {
+    "emit": "tsx src/index.ts",
+    "emit:write": "tsx src/index.ts --out ../../openapi/ar.yaml",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsx": "4.19.1",
+    "@types/node": "22.7.4"
+  }
+}

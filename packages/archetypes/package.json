@@ -1,0 +1,44 @@
+{
+  "name": "@tensaw/archetypes",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The 7 page archetypes every Tensaw app shares: SearchList, ThreePanelDetail, Dashboard, AnalyticsWorkspace, Comparison, AdminMasterDetail, Calendar, Messaging. Plus composition factories. Phase 7 of the v3 plan.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./search-list": "./src/search-list/index.ts",
+    "./three-panel-detail": "./src/three-panel-detail/index.ts",
+    "./dashboard": "./src/dashboard/index.ts",
+    "./analytics-workspace": "./src/analytics-workspace/index.ts",
+    "./comparison": "./src/comparison/index.ts",
+    "./admin-master-detail": "./src/admin-master-detail/index.ts",
+    "./calendar": "./src/calendar/index.ts",
+    "./messaging": "./src/messaging/index.ts"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@tensaw/composition": "workspace:*",
+    "@tensaw/design-system": "workspace:*",
+    "@tensaw/runtime": "workspace:*",
+    "@tensaw/visualization": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

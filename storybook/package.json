@@ -1,0 +1,32 @@
+{
+  "name": "@tensaw/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Storybook catalog for @tensaw/design-system. Stories live alongside their components in packages/design-system/src/<sub-path>/<Component>.stories.tsx and are picked up by main.ts via glob.",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build": "storybook build",
+    "lint": "echo 'storybook lint pending Phase 11'",
+    "typecheck": "tsc --noEmit",
+    "test": "echo 'storybook tests pending Phase 11'"
+  },
+  "dependencies": {
+    "@tensaw/design-system": "workspace:*",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.3.5",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-themes": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "storybook": "^8.3.5",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Tensaw global styles.
+ *
+ * Loaded once at app startup via ThemeProvider. References CSS variables that
+ * the theme system writes onto :root. Components never reference raw colors;
+ * they reference these variables.
+ *
+ * Two parallel variable systems coexist for v0.1:
+ *   • shadcn/ui-style `--background`, `--foreground`, `--primary`, etc.
+ *     (defined below). The new components built in Phases 3-9 consume these
+ *     via Tailwind classes (`bg-background`, `text-foreground`, etc.) wired
+ *     through `tailwind.config.js`.
+ *   • Tensaw legacy `--tw-color-*`, `--tw-fs-*`, etc. The pre-existing RCM
+ *     components (in `src/rcm/`) and the base body styles below still use
+ *     these. The runtime `ThemeProvider`'s `buildCssVariables` writes them.
+ *
+ * The two will be unified in a follow-up; for v0.1 they are additive.
+ */
+
+/* ----------------------------------------------------------------------------
+ * shadcn/ui CSS variables (neutral base, --radius: 0.5rem)
+ * Source: https://ui.shadcn.com/docs/installation/manual
+ * -------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+      'Liberation Mono', monospace;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Tensaw legacy variables (consumed by RCM components and body styles below)
+ * are written onto :root by ThemeProvider via tokens/cssVariables.ts.
+ * -------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(--tw-font-sans);
+  font-size: var(--tw-fs-base);
+  line-height: var(--tw-lh-normal);
+  color: var(--tw-color-text-primary);
+  background: var(--tw-color-surface-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+a {
+  color: var(--tw-color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--tw-shadow-focus-ring);
+  border-radius: var(--tw-radius-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}

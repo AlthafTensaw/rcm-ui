@@ -1,0 +1,13 @@
+{
+  "name": "@tensaw/gen-widget",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Interactive CLI to scaffold a new widget. Phase 8 of the v3 plan.",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "lint": "echo 'gen-widget lint pending Phase 8'",
+    "typecheck": "echo 'gen-widget typecheck pending Phase 8'",
+    "test": "echo 'gen-widget tests pending Phase 8'"
+  }
+}

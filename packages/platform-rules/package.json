@@ -1,0 +1,24 @@
+{
+  "name": "@tensaw/platform-rules",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Custom ESLint rules enforcing the Tensaw platform contracts (widget manifests, no cross-widget imports, PHI wrapping, no raw card data, etc.). Phase 8 of the v3 plan.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "9.6.1",
+    "eslint": "9.12.0"
+  }
+}

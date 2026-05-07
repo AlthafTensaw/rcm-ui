@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "composite": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"],
+  "references": [
+    { "path": "../../packages/runtime" },
+    { "path": "../../packages/codes" },
+    { "path": "../../packages/design-system" },
+    { "path": "../../packages/visualization" },
+    { "path": "../../packages/composition" },
+    { "path": "../../packages/archetypes" },
+    { "path": "../../packages/actions" },
+    { "path": "../../packages/worklist" },
+    { "path": "../../packages/mock-server" }
+  ]
+}

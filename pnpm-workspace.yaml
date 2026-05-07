@@ -1,0 +1,11 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "tools/*"
+  - "storybook"
+
+# Use strict peer dependency resolution
+strict-peer-dependencies: true
+
+# Hoist common deps to root
+shamefully-hoist: false

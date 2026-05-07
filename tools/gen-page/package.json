@@ -1,0 +1,13 @@
+{
+  "name": "@tensaw/gen-page",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Interactive CLI to scaffold a new page from one of the 7 archetype templates. Phase 8 of the v3 plan.",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "lint": "echo 'gen-page lint pending Phase 8'",
+    "typecheck": "echo 'gen-page typecheck pending Phase 8'",
+    "test": "echo 'gen-page tests pending Phase 8'"
+  }
+}
